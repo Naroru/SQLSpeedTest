@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: SQLSpeedTest
+
+  datasource:
+    url: jdbc://localhost:5432/sql_speed_test
+    username: admin
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
