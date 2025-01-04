@@ -1,6 +1,6 @@
-package org.example.sqlspeedtest.repository;
+package org.example.sqltest.speedtest.repository;
 
-import org.example.sqlspeedtest.entitites.SequenceEntity;
+import org.example.sqltest.speedtest.entitites.SequenceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

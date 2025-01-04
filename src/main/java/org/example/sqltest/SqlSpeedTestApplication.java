@@ -1,4 +1,4 @@
-package org.example.sqlspeedtest;
+package org.example.sqltest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

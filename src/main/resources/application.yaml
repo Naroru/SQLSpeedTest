@@ -3,12 +3,19 @@ spring:
     name: SQLSpeedTest
 
   datasource:
-    url: jdbc://localhost:5432/sql_speed_test
-    username: admin
-    password: password
+    url: jdbc:postgresql://localhost:5432/sql_test
+    username: postgres
+    password: admin
     driver-class-name: org.postgresql.Driver
 
+
   jpa:
-    show-sql: true
+    show-sql: false #true
     hibernate:
       ddl-auto: create-drop
+    properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+         # generate_statistics: true # включает генерирование статистики о запросах на уровне Hibernate
+          order_inserts: true #включает сортировку запросов по имени таблицы. В случае если инсерты не отсортированы по имени таблицы, они не могут быть объеденины в один батч и будут разделены на несколько батчей
+          jdbc.batch_size: 100 # размер батча
