@@ -4,18 +4,19 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/sql_test
-    username: postgres
-    password: admin
+    username: admin
+    password: password
     driver-class-name: org.postgresql.Driver
 
 
   jpa:
-    show-sql: false #true
+    show-sql: true #true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
         hibernate:
+          # enable_lazy_load_no_trans: true #позволяет подгружать лениво загруженные данные  при обращении к ним путем открытия новой  сессии и обращения в БД
           dialect: org.hibernate.dialect.PostgreSQLDialect
-         # generate_statistics: true # включает генерирование статистики о запросах на уровне Hibernate
+          # generate_statistics: true # включает генерирование статистики о запросах на уровне Hibernate
           order_inserts: true #включает сортировку запросов по имени таблицы. В случае если инсерты не отсортированы по имени таблицы, они не могут быть объеденины в один батч и будут разделены на несколько батчей
           jdbc.batch_size: 100 # размер батча
